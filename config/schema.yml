@@ -1,0 +1,87 @@
+---
+propel: 
+  _attributes: 
+    package: lib.model
+  jurusan: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    nama: 
+      type: VARCHAR
+      size: 45
+  mahasiswa: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    nama: 
+      type: VARCHAR
+      size: 45
+    jurusan_id: 
+      type: INTEGER
+      required: true
+      foreignTable: jurusan
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    _indexes: 
+      fk_mahasiswa_jurusan: 
+        - jurusan_id
+  mata_kuliah: 
+    _attributes: 
+      idMethod: native
+    id: 
+      type: INTEGER
+      required: true
+      autoIncrement: true
+      primaryKey: true
+    nama: 
+      type: VARCHAR
+      size: 45
+    sks: 
+      type: INTEGER
+    jurusan_id: 
+      type: INTEGER
+      required: true
+      foreignTable: jurusan
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    _indexes: 
+      fk_mata_kuliah_jurusan1: 
+        - jurusan_id
+  test: 
+    id: 
+      type: INTEGER
+  transkrip: 
+    mata_kuliah_id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: mata_kuliah
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    mahasiswa_id: 
+      type: INTEGER
+      required: true
+      primaryKey: true
+      foreignTable: mahasiswa
+      foreignReference: id
+      onDelete: RESTRICT
+      onUpdate: RESTRICT
+    nilai: 
+      type: VARCHAR
+      size: 2
+    _indexes: 
+      fk_mata_kuliah_has_mahasiswa_mahasiswa1: 
+        - mahasiswa_id
+      fk_mata_kuliah_has_mahasiswa_mata_kuliah1: 
+        - mata_kuliah_id
