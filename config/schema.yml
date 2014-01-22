@@ -2,6 +2,7 @@
 propel: 
   _attributes: 
     package: lib.model
+    description: untuk belajar
   jurusan: 
     _attributes: 
       idMethod: native
