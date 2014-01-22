@@ -4,14 +4,15 @@ define('SF_APP',         'depan');
 define('SF_ENVIRONMENT', 'dev');
 define('SF_DEBUG',       true);
 
+//komentar
+
 require_once(SF_ROOT_DIR.DIRECTORY_SEPARATOR.'apps'.DIRECTORY_SEPARATOR.SF_APP.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php');
 
-sfContext::getInstance()->getDatabaseManager()->initialize();
+sfContext::getInstance()->getDatabaseManager()->initialize();//
 
 //echo "Buat data mhs baru ... "; 
 
 //$jur=JurusanPeer::retrieveByPK(1);
-
 //$mhs=new Mahasiswa();
 //$mhs->setNama('Budi Wijaya');
 //$mhs->setJurusan($jur);
